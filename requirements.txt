@@ -1,0 +1,37 @@
+# Nikon Image Space Manager - Python Dependencies
+
+# Core dependencies
+requests>=2.31.0
+python-dotenv>=1.0.0
+PyYAML>=6.0.1
+
+# Image processing
+Pillow>=10.2.0
+exifread>=3.0.0
+rawpy>=0.19.0
+
+# File management and utilities
+click>=8.1.7
+tqdm>=4.66.1
+watchdog>=3.0.0
+
+# Data management
+pandas>=2.1.4
+sqlalchemy>=2.0.25
+
+# Cloud storage integration
+google-cloud-storage>=2.14.0
+dropbox>=11.36.2
+boto3>=1.34.22  # AWS S3
+
+# Configuration and logging
+colorlog>=6.8.0
+rich>=13.7.0
+
+# Testing (optional)
+pytest>=7.4.4
+pytest-cov>=4.1.0
+
+# Documentation (optional)
+mkdocs>=1.5.3
+mkdocs-material>=9.5.3
