@@ -1,0 +1,139 @@
+# Nikon Image Space Manager - Configuration Settings
+# Copy this file to settings.yml and customize for your needs
+
+# Storage Configuration
+storage:
+  # Base directory for downloaded images
+  download_directory: "./downloads"
+  
+  # Organization method: 'by-date', 'by-album', 'by-camera', or 'mixed'
+  organization_method: "by-date"
+  
+  # Create subdirectories for different file types
+  separate_raw_jpeg: true
+  
+  # Preserve original folder structure from Nikon Image Space
+  preserve_source_structure: false
+
+# Download Settings
+download:
+  # Batch size for concurrent downloads
+  batch_size: 5
+  
+  # Maximum retries for failed downloads
+  max_retries: 3
+  
+  # Download timeout in seconds
+  timeout: 300
+  
+  # Skip files that already exist
+  skip_existing: true
+  
+  # Verify file integrity after download
+  verify_integrity: true
+
+# Nikon Image Space API
+nikon_api:
+  # API endpoint (if available)
+  endpoint: "https://nis.nikonimagespace.com/api"
+  
+  # API credentials stored in credentials.env
+  # username: from environment
+  # password: from environment
+  
+  # Rate limiting
+  requests_per_minute: 30
+
+# Space Optimization
+optimization:
+  # Enable automatic compression
+  auto_compress: false
+  
+  # Compression quality (1-100, higher is better)
+  jpeg_quality: 95
+  
+  # Convert RAW to JPEG for archival
+  convert_raw_to_jpeg: false
+  
+  # Generate thumbnails
+  generate_thumbnails: true
+  thumbnail_size: [400, 400]
+  
+  # Remove duplicates based on file hash
+  remove_duplicates: false
+  
+  # Duplicate handling: 'keep-first', 'keep-largest', 'keep-newest'
+  duplicate_strategy: "keep-first"
+
+# Metadata Management
+metadata:
+  # Extract EXIF data from images
+  extract_exif: true
+  
+  # Preserve original timestamps
+  preserve_timestamps: true
+  
+  # Tag images based on EXIF data
+  auto_tag: true
+  
+  # Metadata database file
+  database_file: "./metadata.db"
+  
+  # Export metadata to CSV
+  export_csv: false
+  csv_output: "./reports/metadata.csv"
+
+# Cloud Backup Integration
+cloud_backup:
+  # Enable cloud backup
+  enabled: false
+  
+  # Provider: 'google-drive', 'dropbox', 'onedrive', 's3'
+  provider: null
+  
+  # Sync frequency: 'realtime', 'hourly', 'daily', 'weekly'
+  sync_frequency: "daily"
+  
+  # Backup original files or optimized versions
+  backup_originals: true
+  
+  # Cloud storage path
+  remote_path: "/NikonImageSpace"
+
+# Logging and Reporting
+logging:
+  # Log level: 'DEBUG', 'INFO', 'WARNING', 'ERROR'
+  level: "INFO"
+  
+  # Log file location
+  log_file: "./reports/nikon-manager.log"
+  
+  # Enable console output
+  console_output: true
+  
+  # Generate storage reports
+  generate_reports: true
+  report_frequency: "weekly"
+
+# Advanced Settings
+advanced:
+  # Number of worker threads
+  worker_threads: 4
+  
+  # Memory limit for image processing (MB)
+  memory_limit: 2048
+  
+  # Temporary directory for processing
+  temp_directory: "./temp"
+  
+  # Clean up temp files after processing
+  cleanup_temp: true
+  
+  # Enable file watching for automatic organization
+  watch_downloads: false
+  
+  # Notification settings
+  notifications:
+    enabled: false
+    methods: ["email", "desktop"]
+    email: null
